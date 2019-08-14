@@ -14,10 +14,28 @@ def attack_roll(number):
 
 
 while True:
-    attack_modifer = input("What is your Attack Modifier? ")
+    while True:
+        attack_modifer = input("What is your Attack Modifier? ")
+
+        try:  ### Ensures valid integer input
+            val = int(attack_modifer)
+            break
+        except ValueError:
+            print("That is not a valid modifier")
+
+
     attack_roll(attack_modifer)
-    attack = input("Can you attack again? (Y or N): ")
-    if attack.upper() == 'N':
+
+###  This section allows you to attack again and check for valid responses
+    while True:
+        attack = input("Can you attack again? (Y or N): ")
+        if attack.upper() == 'N' or attack.upper() == "Y":
+            break
+        else:
+            print("Invalid response.")
+    if attack.upper() == "N":
         break
-    
+    else:
+        continue
+
 print("Your attack is done!!")
