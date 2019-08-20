@@ -28,6 +28,9 @@ def damage_roll():  ## simulates damage roll based on user input
     print("You did " + str(total_damage) + " points of damage!!")
 
 
+
+
+## Begin program
 while True:
 
     while True:
@@ -41,9 +44,15 @@ while True:
 
     attack_roll(attack_modifer)
 
-##### hit/miss prompt
-
-##### if/else to determine to run damage_roll function
+##### hit/miss prompt &
+    while True:
+        hit_prompt = input("Did you hit? (Y or N): ")
+        if hit_prompt.upper() == 'N' or hit_prompt.upper() == "Y":
+            break
+        else:
+            print("Invalid response.")
+    if hit_prompt.upper() == "Y":
+        damage_roll()
 
 
     while True:  ###  This section allows you to attack again and check for valid responses
